@@ -11,6 +11,7 @@ class Bottomnavigation extends StatefulWidget {
 
 class _BottomnavigationState extends State<Bottomnavigation> {
   int _currentIndex = 0;
+  List page = [HomePage(), HomePage(), HomePage(), HomePage()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,26 +23,10 @@ class _BottomnavigationState extends State<Bottomnavigation> {
           BottomNavigationBarItem(icon: Icon(Icons.favorite, color: Colors.black), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.people, color: Colors.black), label: '')
         ],
+        body: body[_currentIndex],
         onTap: (value) {
           setState(() {
             _currentIndex = value;
-            switch (value) {
-              case 0:
-                const HomePage();
-                break;
-              case 1:
-                const HomePage();
-                break;
-              case 2:
-                const HomePage();
-                break;
-              case 3:
-                const HomePage();
-                break;
-              default:
-                const HomePage();
-                break;
-            }
           });
         },
       ),
